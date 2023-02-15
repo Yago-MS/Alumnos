@@ -22,11 +22,12 @@ public class Alumnos {
         double notaIntroducida;
         for (int i = 0; i < 5; i++) {
             alum[i] = new Alumno();
-            System.out.print("Alumno " + i + "\nNombre: ");
+            System.out.println("Alumno " + i);
+            System.out.print("Nombre: ");
             nombreIntroducido = entrada.nextLine();
             (alum[i]).setNombre(nombreIntroducido);
             System.out.print("Nota media: ");
-            notaIntroducida = entrada.nextDouble();
+            notaIntroducida = Double.parseDouble(entrada.nextLine());
             alum[i].setNota(notaIntroducida);
         } 
 
