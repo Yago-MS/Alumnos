@@ -3,7 +3,9 @@ package Alumno;
 /**
  * Alumno.java Definición de la clase Alumno
  *
- * @author Luis José Sánchez
+ * @author Yago
+ * V1.2
+ * modificacíon de la variable nota
  */
 public class Alumno {
 
@@ -22,20 +24,20 @@ public class Alumno {
     }
 
     /**
-     * @return the notaMedia
+     * @return the nota
      */
-    public double getNotaMedia() {
-        return notaMedia;
+    public double getNota() {
+        return nota;
     }
 
     /**
-     * @param notaMedia the notaMedia to set
+     * @param nota the nota to set
      */
-    public void setNotaMedia(double notaMedia) {
-        this.notaMedia = notaMedia;
+    public void setNota(double nota) {
+        this.nota = nota;
     }
 
     private String nombre;
-    private double notaMedia = 0.0;
+    private double nota;
 
 }
