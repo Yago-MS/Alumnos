@@ -1,25 +1,26 @@
 package alumnos;
-
+/**
+ * Alumno.java Definición del programa de alumnos
+ *
+ * @author Luis José Sánchez
+ * @version V 1.2
+ */
 import Alumno.Alumno;
 import java.util.Scanner;
 
 public class Alumnos {
 
-    public static void main(String[] args) {
+    /*
+    * Definición de la función registraAlumno
+    *for i
+    *
+    * @param Alumno[] parametro objeto array
+    */
+    public static void registraAlumnos(Alumno[] alum) {
         Scanner entrada = new Scanner(System.in);
-
-        // Define la estructura, un array de 5 alumnos
-        // pero no crea los objetos
-        Alumno[] alum = new Alumno[5];
-
-        // Pide los datos de los alumnos /////////////////////////////////
-        System.out.println("A continuacion debera introducir el nombre y la nota media de 5 alumnos.");
-
         String nombreIntroducido;
         double notaIntroducida;
-
         for (int i = 0; i < 5; i++) {
-
             alum[i] = new Alumno();
             System.out.println("Alumno " + i);
             System.out.print("Nombre: ");
@@ -27,22 +28,45 @@ public class Alumnos {
             (alum[i]).setNombre(nombreIntroducido);
             System.out.print("Nota media: ");
             notaIntroducida = Double.parseDouble(entrada.nextLine());
-            alum[i].setNotaMedia(notaIntroducida);
-        } // for i
+            alum[i].setNota(notaIntroducida);
+        } 
 
+    }
+    /*
+    * Definición de la función muestraAlumno
+    * 
+    * @param Alumno[] parametro objeto array
+    * @param i indice del objeto array 
+    */
+    public static void muestraAlumno(Alumno[] alum, int i){
+             System.out.println("Alumno " + i 
+                     + "\nNombre: " + alum[i].getNombre() 
+                     + "\nNota media: " + alum[i].getNota()
+                     + "\n----------------------------");
+    }
+    
+    public static void main(String[] args) {
+        
+        // Define la estructura, un array de 5 alumnos
+        // pero no crea los objetos
+        Alumno[] alum = new Alumno[5];
+
+        // Pide los datos de los alumnos /////////////////////////////////
+        System.out.println("A continuacion debera introducir el nombre y la nota media de 5 alumnos.");
+        
+        //llamada a la funcion registraAlumnos
+        registraAlumnos(alum);
+        
         // Muestra los datos de los alumnos /////////////////////////////////
         System.out.println("Los datos introducidos son los siguientes:");
 
         double sumaDeMedias = 0;
 
         for (int i = 0; i < 5; i++) {
-            System.out.println("Alumno " + i);
-            System.out.println("Nombre: " + alum[i].getNombre());
-            System.out.println("Nota media: " + alum[i].getNotaMedia());
-            System.out.println("----------------------------");
-
-            sumaDeMedias += alum[i].getNotaMedia();
-        } // for i
+            //Llamada a la funcion muestraAlumnos
+            muestraAlumno(alum, i);
+            sumaDeMedias += alum[i].getNota();
+        } 
 
         System.out.println("La media global de la clase es " + sumaDeMedias / 5);
     }
